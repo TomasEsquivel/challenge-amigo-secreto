@@ -9,6 +9,7 @@ function listarAmigos(){
 
     lista.innerHTML = '';
 
+    //Primero había hecho concatenaciones con innerHTML y template string pero por eficiencia lo cambié.
     for(let i = 0; i <= listaAmigos.length;i++){
         let li = document.createElement("li");
 
@@ -32,5 +33,14 @@ function agregarAmigo(){
 }
 
 function sortearAmigo(){
+    let indices = listaAmigos.length;
+    let indiceSorteado = Math.floor(Math.random() * indices);
+    let amigoSorteado = listaAmigos[indiceSorteado];
 
+    let lista = document.querySelector('.name-list');
+    lista.innerHTML= '';
+
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li>El amigo sorteado es ${amigoSorteado}</li>`
+    return;
 }
